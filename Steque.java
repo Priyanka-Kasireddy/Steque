@@ -52,6 +52,7 @@ public class Steque<Item> implements Iterable<Item>
      * inserts an item in the steque in queue fashion.
      * @param item Item to be inserted.
      */
+    //Time Complexity:O(1), Space Complexity:O(N)
     public void enqueue(Item item) {
         if(item==null)
         throw new IllegalArgumentException();
@@ -72,7 +73,15 @@ public class Steque<Item> implements Iterable<Item>
      * @param item Item to be inserted.
      */
     public void push(Item item) {
-
+        if(item==null)
+            throw new IllegalArgumentException();
+        Node oldfirst=first;
+        first=new Node();
+        first.item=item;
+        first.next=oldfirst;
+        if(last==null)
+            last=first;
+        n++;
     }
     
     /**

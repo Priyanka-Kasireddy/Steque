@@ -109,7 +109,7 @@ public class Steque<Item> implements Iterable<Item>
      * @return size as integer.
      */
     public int size() {
-
+        return n;
     }
     
     /**
